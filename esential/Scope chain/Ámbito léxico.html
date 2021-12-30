@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var myAlerts = [];
+
+				for (var i = 0; i < 5; i++) {
+				    myAlerts.push(
+				        function inner() {
+				            alert(i);
+				        }
+				    );
+				}
+
+				myAlerts[0](); // 5
+				myAlerts[1](); // 5
+				myAlerts[2](); // 5
+				myAlerts[3](); // 5
+				myAlerts[4](); // 5
+			}
+		</script>
+		
+	</head>
+	<body >
+		<input type="text" id="">
+		
+	
+	</body>
+</html>	

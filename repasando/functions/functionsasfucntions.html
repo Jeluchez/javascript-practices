@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="rainbow">Rainbow</div>
+    <script>
+        let getNextRainbowColor = (function () {
+            let colors = ['red', 'orange', 'yellow', 'green',
+                'blue', 'indigo', 'violet'];
+            let colorIndex = -1;
+            return function () {
+                if (++colorIndex >= colors.length) colorIndex = 0;
+                return colors[colorIndex];
+            };
+        })();
+
+        setInterval(function () {
+            document.querySelector('.rainbow')
+                .style['background-color'] = getNextRainbowColor();
+        }, 500);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				function esperarUnSegundo(callback, context) {
+					setTimeout(function() {
+						callback.call(context);
+					}, 1000);
+				}
+				var alice = {
+				  nombre: "Alice",
+				  cansarse: function() {
+					alert(this.nombre + " se ha cansado de esperar");
+				  }
+				};
+				esperarUnSegundo(alice.cansarse, alice);
+				esperarUnSegundo(alice.cansarse, {nombre:'ingenieria'});
+			};
+		</script>
+		
+	</head>
+	<body >
+		
+	
+	</body>
+</html>	

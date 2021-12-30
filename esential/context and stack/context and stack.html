@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>context</title>	
+	</head>
+	<body>
+		<script type="text/javascript">
+			//global context
+			var say = "hello";
+
+			function person(){  //execution context
+
+				var first = "David";
+				var last = "sanchez";
+
+				function firstName(){ //execution context
+					return first;
+				}
+				function firstlast(){ //execution context
+					return last;
+				}
+				alert(say +" "+firstName()+" "+firstlast());
+			}
+		</script>
+	</body>
+</html>

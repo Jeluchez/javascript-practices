@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="greet">
+      Hello every one
+    </div>
+
+    <script>
+      const mql = window.matchMedia('(min-width: 992px)')
+      mql.addEventListener('change', resize)
+      function resize (e) {
+        if (this.matches) {
+          console.log(window.screen.width)
+          document.querySelector('.greet').style.backgroundColor = "pink";
+          // sidebar.current.classList.remove('ischatclose');
+        }else{
+            document.querySelector('.greet').style.backgroundColor = "transparent";
+        }
+      }
+    </script>
+  </body>
+</html>

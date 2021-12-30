@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	span{
+		margin-right: 1rem;
+	}
+</style>
+<body>
+
+<span id="hour">hora	 </span><span id="minute">minutos	 </span><span id="second">segundos </span>
+<button type="button" id="btnp">pausar</button>
+<button type="button" id="btnreturn" >reiniciar</button>
+
+<script type="text/javascript">
+		let hour = document.querySelector("#hour");
+		let minute = document.querySelector("#minute");
+		let second = document.querySelector("#second");
+		let btn = document.querySelector("#btnp");
+		let btnre = document.querySelector("#btnreturn");
+
+		let hc=0;
+		let mc=0;
+		let sc=0;
+		let bstop = true;
+		let idInterval;
+
+		var reloj=function(){
+			second.innerHTML = sc=sc+2;
+			if(sc ==60){
+				minute.innerHTML= mc=mc+2;
+				sc=0;
+			}
+			if (mc==60) {
+				hour.innerHTML = hc++;
+				mc=0;
+			};	
+		}
+
+		idInterval = setInterval(reloj,300);
+
+		//pausar y reanudar
+		btn.addEventListener("click",function(){
+			if(bstop){
+				clearInterval(idInterval);
+				bstop = false;
+				btn.firstChild.nodeValue = "reanudar";
+			}
+			else{
+				idInterval = setInterval(reloj,300);
+				btn.firstChild.nodeValue = "pausar";
+				bstop = true;
+			}
+		} ,false);
+
+		//reiniciar
+		btnre.addEventListener("click",function(){
+			clearInterval(idInterval);
+			hc=0;
+			mc=0;
+			sc=0;
+			minute.innerHTML=00;
+			hour.innerHTML=00;
+			second.innerHTML=00;
+		});
+
+		
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      async function srcToFile (src, fileName, mimeType) {
+        const res = await fetch(src)
+        const bufer = await res.arrayBuffer()
+        const newFile = new File([bufer], fileName, { type: mimeType })
+        return newFile;
+      }
+      srcToFile(
+        'https://res.cloudinary.com/jeluchez-devdor/image/upload/v1609359080/83797980_118402296369338_9200245042420121600_n_oijq5d.jpg',
+        'cerebro',
+        'image/jpeg'
+      ).then(function (file) {
+        console.log(file)
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

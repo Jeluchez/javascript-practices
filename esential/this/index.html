@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>this keyboard</title>
+    <script>
+        let o = {
+            name: 'Wallace',
+            speak() { return `My name is ${this.name}!`; },
+        }
+        let speak = o.speak;
+        speak === o.speak; // true; both variables refer to the same function
+
+        // here there are any context to attribute 'name', so the result is >> My name is !
+        console.log(speak());
+
+        // in strict mode
+        function f2() {
+            'use strict'; // see strict mode
+            return this;
+        }
+        f2() === undefined; // true
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

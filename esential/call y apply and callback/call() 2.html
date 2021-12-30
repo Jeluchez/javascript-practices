@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+			
+				const alice = {
+				  nombre: "Alice",
+				  saludar: function(amigo1, amigo2) {
+					alert("hola " + amigo1 + " y " + amigo2 + " yo soy " + this.nombre);
+				  }
+				};
+				const avion ={
+					nombre: 'air-500'
+				};
+
+				const myFunction = alice.saludar;
+				
+				function callWithAlice() {
+					console.log(arguments[1]);
+					myFunction.apply(arguments[0], arguments[1])
+				}
+			};
+		</script>
+		
+	</head>
+	<body >
+		
+	
+	</body>
+</html>	

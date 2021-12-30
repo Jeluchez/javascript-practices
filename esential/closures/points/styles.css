@@ -1,0 +1,44 @@
+*{
+    padding: 0; margin:0;
+    box-sizing: content-box;
+}
+header{
+    text-align: center;
+}
+button{cursor: pointer; padding:5px;}
+#num-generated{
+    font-size: 50px;
+    color: green;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    margin: 2rem;
+}
+.players{
+    text-align: center;
+    display: flex;
+    width: 100%;
+}
+.players div{
+    width: 50%;
+}
+.sumado{
+    color: red;
+    font-size: 80px;
+}
+.finish{
+    text-align: center; 
+}
+#btn-end{
+    font-size: 20px;
+    padding: 20px;
+    background-color: red;
+    border:none;
+    color: white;
+    outline: none;
+}
+.result{
+    padding: 3rem;
+}
+

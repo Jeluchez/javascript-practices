@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>su edad es: </h1>
+	<div id="recData"></div>
+	<script type="text/javascript">
+		var recData = document.getElementById("recData");
+		var age= window.location.search;
+		//replace only take the number
+		age= parseInt(age.replace( /^\D+/g, ''));
+		recData.innerHTML= age+1;
+
+	</script>
+</body>
+</html>

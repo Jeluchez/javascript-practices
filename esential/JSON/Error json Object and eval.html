@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+	var json = JSON.parse('{"result" = "ok" }'); //this trow error for the "=" instead ":"
+	eval('('+json+')');
+	console.log(json.result);
+
+</script>
+
+</body>
+</html>

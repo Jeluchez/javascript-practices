@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>+</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+function addToArray (data, array) {  
+	const promise = new Promise(function (resolve, reject) {
+		setTimeout(function() {
+		  array.push(data)
+		  resolve(array)
+		}, 1000);
+
+		if (!array) {
+		  reject(new Error('No existe un array'))
+		}
+	});
+
+	return promise
+}
+
+const array = [1, 2, 3]  
+addToArray(4, array).then(function () {  
+console.log(array)
+})
+
+
+</script>
+
+</body>
+</html>

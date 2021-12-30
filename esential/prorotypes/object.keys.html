@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Person() {
+        }
+        Person.prototype.name = 'Nicholas';
+        Person.prototype.age = 29;
+        Person.prototype.job = 'Software Engineer';
+        Person.prototype.sayName = function () {
+            alert(this.name);
+        };
+        var keys = Object.keys(Person.prototype);
+        console.log(keys); //'name,age,job,sayName'
+        var p1 = new Person();
+        p1.name = 'Rob';
+        p1.age = 31;
+        var p1keys = Object.keys(p1);
+        console.log(p1keys);
+    </script>
+</body>
+
+</html>

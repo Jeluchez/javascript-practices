@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Rectangle(width, height) {
+            console.log("I'm creating a new Rectangle");
+            this.width = width;
+            this.height = height;
+            // function to calculate the area
+            this.calculateArea = function () {
+                return this.width * this.height;
+            }
+        }
+        const rectangle1 = new Rectangle(143, 187);
+        let area =rectangle1.calculateArea();
+        console.log(area);
+        var rectangle2 = new rectangle1.constructor(300, 200);
+        area =rectangle2.calculateArea();
+        console.log(area);
+    </script>
+</body>
+
+</html>

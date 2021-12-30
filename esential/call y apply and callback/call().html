@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+			
+				var alice = {
+				  nombre: "Alice",
+				  cansarse: function() {
+					console.log(this.nombre);
+				  }
+				};
+
+				var myFunction;// alice.cansarse;
+				//alert(myFunction()); //undefined*/
+				myFunction.call(alice);//Alice
+				
+			};
+		</script>
+		
+	</head>
+	<body >
+		
+	
+	</body>
+</html>	

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	
+	div{
+		background: #FFF600;
+	}
+</style>
+<body>
+<h1>Este titulo se le puede dar click</h1>
+<div>
+y a este div tambien0
+	<button id="btn">click</button>
+	<p>a este aparrafo tambie</p>
+</div>
+<div>
+y a este div tambien1
+</div>
+<div>
+y a este div tambien2
+</div>
+<div>
+y a este div tambien3
+</div>
+<div>
+y a este div tambien4
+</div>
+
+
+
+<script type="text/javascript">
+
+	btn = document.querySelector('#btn');
+	
+	var add_the_handlers = function (nodes) {
+		var i;
+		for (i = 0; i < nodes.length; i += 1) {
+			nodes[i].onclick = function (i) {
+				return function (e) {
+					alert(e.target.tagName);
+				};
+			}(i);
+		}
+	};
+	add_the_handlers(document.body.childNodes);
+	//alert(document.body.childNodes.length);
+	/*btn.addEventListener("click", function(){
+		o.increment("n");
+		alert(o.getValue());
+	},false);*/
+	
+	
+
+	// We are not assigning a function to myObject. 
+	// We are assigning the result of invoking
+	// that function.
+</script>
+</body>
+</html>

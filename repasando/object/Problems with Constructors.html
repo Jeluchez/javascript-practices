@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        function Person(name, age, job) {
+            this.name = name;
+            this.age = age;
+            this.job = job;
+            this.sayName = new Function("alert(this.name)"); //logical equivalent
+        }
+        const p1 = new Person("carl", 17,"Lawyer");
+        const p2 = new Person("Rut", 19,"Doctor");
+        console.log(p1.sayName == p2.sayName); //false
+        console.log(p1.name == p2.name); //false
+       console.log(p1.constructor == p2.constructor);
+    </script>
+</body>
+
+</html>

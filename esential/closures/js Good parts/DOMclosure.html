@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<button id="btn">click</button>
+
+
+<script type="text/javascript">
+
+	btn = document.querySelector('#btn');
+	
+	// Define a function that sets a DOM node's color
+// to yellow and then fades it to white.
+	var fade = function (node) {
+		var level = 1;
+		var step = function ( ) {
+			var hex = level.toString(16);
+			node.style.backgroundColor = '#FFFF' + hex + hex;
+			if (level < 15) {
+				level += 1;
+				setTimeout(step, 100);
+			}
+		};
+		setTimeout(step, 100);
+	};
+	fade(document.body);
+
+
+	/*btn.addEventListener("click", function(){
+		o.increment("n");
+		alert(o.getValue());
+	},false);*/
+	
+	
+
+	// We are not assigning a function to myObject. 
+	// We are assigning the result of invoking
+	// that function.
+</script>
+</body>
+</html>

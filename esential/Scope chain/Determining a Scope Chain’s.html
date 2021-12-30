@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				function one() {
+				    two();
+
+				    function two() {
+				        three();
+
+				        function three() {
+				            alert('I am at function three');
+				        }
+				    }
+				}
+
+				one();
+			};
+
+		</script>
+		
+	</head>
+	<body >
+		<input type="text" id="">
+		
+	
+	</body>
+</html>	

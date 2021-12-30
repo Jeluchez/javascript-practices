@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				(function(){
+
+				    alert(typeof foo); // function pointer
+				    alert(typeof bar); // undefined
+
+				    var foo = 'hello';
+
+				    var bar = function() {
+				    	return 'world';
+				    }
+
+				    function foo() {
+				        return 'hello';
+				    }
+
+				}());
+			};
+
+		</script>
+		
+	</head>
+	<body >
+		
+	
+	</body>
+</html>	

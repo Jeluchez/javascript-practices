@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<button id="btn">click</button>
+
+
+<script type="text/javascript">
+
+	btn = document.querySelector('#btn');
+	
+	var myObject = function ( ) {
+		var value = 0;
+		return {
+			increment: function (inc) {
+				value += typeof inc === 'number' ? inc : 1;
+			},
+			getValue: function ( ) {
+				return value;
+			}
+		};
+	}( );
+
+	var o = myObject;
+	o.increment(1);
+	btn.addEventListener("click", function(){
+		o.increment("n");
+		alert(o.getValue());
+	},false);
+	
+	
+
+	// We are not assigning a function to myObject. 
+	// We are assigning the result of invoking
+	// that function.
+</script>
+</body>
+</html>

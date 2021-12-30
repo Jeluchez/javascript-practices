@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        function foo() { }
+        let bar = function () { };
+        let baz = () => { };
+        console.log(foo.name); // foo
+        console.log(bar.name); // bar
+        console.log(baz.name); // baz
+        console.log((() => { }).name); // (empty string)
+        console.log((new Function()).name); // anonymous
+    </script>
+</body>
+
+</html>

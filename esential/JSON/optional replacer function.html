@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var json = '{"call":"KF6GPE","type":"l","time":"1399371514",'+
+			'"lasttime":"1418597513","lat":37.17667,"lng":-122.14650,"result" : "ok" }';
+
+	var obj = JSON.parse(json, (k,v)=> {
+		return k=='call' ? v.toLowerCase(): v;
+	});
+	
+	for (i in obj) {
+		console.log(obj[i]);
+	}
+
+	var newJson = JSON.stringify(obj, function (k, v) {
+		return k == 'type' ? undefined: v ;
+	});
+	alert(newJson);
+</script>
+
+</body>
+</html>

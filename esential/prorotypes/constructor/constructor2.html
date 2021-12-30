@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Person(name){
+            this.name=name
+        }
+        Person.prototype.greet = function (){
+            return this.name
+        }
+        function Employe(name){
+            Person.call(this,name);
+        }
+        Employe.prototype =  Object.create(Person.prototype);
+        console.log(Employe.prototype.constructor);
+        
+    </script>
+</body>
+
+</html>

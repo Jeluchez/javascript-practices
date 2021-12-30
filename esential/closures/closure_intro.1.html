@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button type="button" onclick="handleClick()">Click</button>
+    <span id="display">0</span>
+
+
+    <script>
+        const display = document.getElementById('display');
+        const FactoryClick = (e) => {
+            let counter=0;
+
+            return function(){
+                return counter++;
+            }
+
+        }
+
+        const getCounter = FactoryClick();
+
+        const handleClick = () => {
+            // console.log(display);
+            console.log(getCounter())
+            display.innerHTML=getCounter();
+        }
+
+        
+
+        function creaSumador(x) {
+            return function (y) {
+                return x + y;
+            };
+        }
+
+        var suma5 = creaSumador(5);
+        var suma10 = creaSumador(10);
+
+        console.log(suma5(2));  // muestra 7
+        console.log(suma10(2)); // muestra 12 
+    </script>
+</body>
+
+</html>
