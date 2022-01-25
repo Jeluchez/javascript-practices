@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const distance = function (start) {
+            // we have a closed scope here, but we'll return a function that
+            //  can access it - effectively creating a "closure".
+            return function (end) {
+                // now, in this function, we have everything we need. we can do
+                //  the calculation and return the result.
+                return Math.sqrt(Math.pow(end.x - start.x, 2) + Math.pow(end.y - start.y, 2));
+            }
+        }
+
+        console.log(distance({ x: 2, y: 2 })({ x: 11, y: 8 }));
+    </script>
+</body>
+
+</html>

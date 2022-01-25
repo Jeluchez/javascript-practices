@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        const range = (from, to, step = 1) => {
+
+            let quan;
+
+            if(from > to){
+                quan = from - to + 1;
+                return Array.from({ length: quan }, (_, i) => from - i)
+            }
+            if (step > 1) {
+                quan = (to - from) / step + 1
+                return Array.from({ length: quan }, (_, i) => from + (i * step))
+            }
+            else if (step === 1 || step === 0) {
+                quan = to - from + 1;
+                return Array.from({ length: quan }, (_, i) => from + i)
+            }
+          
+        }
+
+
+
+        console.log(range(2, 14));
+        console.log(range(2, 10, 4));
+        console.log(range(5, 2));
+        console.log(range(-5, -2));
+        // console.log(arrayRange.reduce((acumulator, curr) => acumulator + curr));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

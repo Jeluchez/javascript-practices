@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        const numbers =[3,20,8,10];
+        const numbers2 =[3,5,8,10];
+
+        const res = numbers.reduce((prev, curr,currIndx,array) => prev === numbers2[currIndx] ? (numbers2[currIndx]) : 0)
+        console.log(res);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
