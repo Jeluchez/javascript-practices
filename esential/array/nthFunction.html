@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+       
+
+        const listToArray = (list) => {
+            let array = [];
+            for (let node = list; node; node = node.rest) {
+                array.push(node.value);
+            }
+            return array
+        }
+        const arrayToList = (arr) => {
+
+            function fillObject(i) {
+                if (i === (arr.length - 1)) {
+                    return {
+                        value: arr[i],
+                        rest: null
+                    }
+                }
+                return {
+                    value: arr[i],
+                    rest: fillObject(++i)
+                }
+            }
+            return fillObject(0);
+        }
+
+        const nth = (list, ind) => {
+
+            const newArray = listToArray(list);
+            let i = 0
+
+            if (ind > newArray.length - 1) return undefined;
+            if (ind <= 0) return list
+
+            newArray.splice(0, ind)
+            console.log(newArray);
+
+            return arrayToList(newArray)
+        }
+
+
+
+
+        const list = {
+            "value": 1,
+            "rest": {
+                "value": 2,
+                "rest": {
+                    "value": 3,
+                    "rest": {
+                        "value": 4,
+                        "rest": null
+                    }
+                }
+            }
+        }
+        console.log(nth(list, 2));
+        // console.log(newList)
+        // console.log(arrayRange.reduce((acumulator, curr) => acumulator + curr));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

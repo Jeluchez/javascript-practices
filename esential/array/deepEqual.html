@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        const list = {
+            "value": 1,
+            "rest": {
+                "value": 2,
+                "rest": {
+                    "value": 3,
+                    "rest": null
+                }
+            }
+        }
+
+        const deepEqual = (ob1,ob2) => {
+
+            // checked null
+            if (ob1 === null && ob2 === null) return true
+            if((ob1 === null && typeof ob2=== 'object') || (ob2 === null && typeof ob1=== 'object')){
+                return false
+            }
+            // checked object
+            if (typeof ob1 === 'object' && typeof ob2  === 'object') {
+                
+                function equalObject(ob1,ob2){
+                   const objet1 =  Object.entries(obj1)
+                   const objet2 =  Object.entries(obj2)
+                   if(objet1.length != objet2.length){
+                       return false
+                   }
+                }
+
+                return equalObject(ob1,ob2)
+            }
+
+            return ob1 === ob2
+        }
+        const obj1 = {
+            name:'Jose',
+            last:'Sanchez',
+            age: 17,
+        }
+        const obj2 = {
+            name:'Jose',
+            last:'Sanchez',
+            address:{
+                city:'Buenaventura',
+                location:'cascajal',
+                number:'cra 56c # 3s 21'
+            }
+        }
+        const obj3 = {
+            name:'Jose',
+            last:'Sanchez',
+            address:{
+                city:'Buenaventura',
+                location:'cascajal',
+                number:'cra 56c # 3s 21'
+            }
+        }
+
+        console.log(JSON.stringify(obj3).trim()===JSON.stringify(obj2).trim());
+
+        // console.log(deepEqual(obj1,obj2))
+        // deepEqual
+        // console.log(arrayRange.reduce((acumulator, curr) => acumulator + curr));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

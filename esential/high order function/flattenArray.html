@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        const flatInnerArray = (arr) => {
+            let array = [...arr];
+            let flatten = [];
+
+            while (array.length > 0) {
+                let index = array.findIndex(el => Array.isArray(el))
+                if (index != -1) {
+                    // add array in the same position
+                    array.splice(index, 1, ...array[index]);
+                }
+                else {
+                    flatten.push(...array);
+                    array = []
+                }
+            }
+            return flatten
+        }
+
+        // const array = [[1, 2], 3, [4, 5], 6, 7, [8, [9, [10, 11]], 12], 13]
+        const arr = [1, [[[[2, 10, 20]]]], [3, 4], [5, [6, 7]]];
+        // const arr = [1, 2, 3, 4];
+        console.log(flatInnerArray(arr).sort((a, b) => a - b))
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

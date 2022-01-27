@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        const arrayToList = (arr) => {
+
+            function fillObject(i) {
+                if (i === (arr.length-1)) {
+                    return {
+                        value: i+1,
+                        rest: null
+                    }
+                }
+                return {
+                    value: arr[i],
+                    rest: fillObject(++i)
+                }
+            }
+            return fillObject(0);
+        }
+
+
+
+        const list = arrayToList([1, 2, 3]);
+        console.log(JSON.stringify(list))
+        // console.log(arrayRange.reduce((acumulator, curr) => acumulator + curr));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

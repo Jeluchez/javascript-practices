@@ -6,21 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <script>
-        const arrayToList = () => {
-        
-        }
-
-
-
-        console.log(range(-5, -2));
-        // console.log(arrayRange.reduce((acumulator, curr) => acumulator + curr));
-
-    </script>
 </head>
 
 <body>
+    <script>
+        function* foo() {
+            yield 1;
+            yield 2;
+            yield 3;
+        };
+
+        for (const o of foo()) {
+            console.log(o);
+            break; // closes iterator, execution continues outside of the loop
+        }
+        console.log('done');
+    </script>
+
 
 </body>
 
