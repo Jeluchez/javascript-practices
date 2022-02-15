@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        class Group {
+            constructor() {
+                this.set = [];
+            }
+
+            add(val) {
+                if (this.set.indexOf(val) === -1) {
+                    this.set.push(val);
+                }
+            }
+            delete(val) {
+                const index = this.set.indexOf(val);
+                if (index !== -1) {
+                    this.set.splice(index, 1);
+                }
+            }
+            isMember(val) {
+                return this.set.indexOf(val) !== -1 ? true : false
+            }
+            static from(obj) {
+                let arr = []
+                if (Array.isArray(obj)) {
+                    obj.forEach(val => {
+                        if (arr.indexOf(val) === -1) {
+                            arr.push(val);
+                        }
+                    })
+                    return arr;
+                }
+                arr = [];
+                for (const val in obj) {
+                    if (arr.indexOf(obj[val]) === -1) {
+                        arr.push(obj[val]);
+                    }
+                }
+                return arr;
+            }
+        }
+
+        const g = new Group();
+        g.add(1);
+        g.add(2);
+        g.add(3);
+        g.add(1);
+        console.log(g.set);
+
+        g.delete(1)
+        console.log(g.set);
+        console.log(g.isMember(1))
+        const arr = Group.from({ name: 'richard', age: '17' })
+        const arr2 = Group.from([1,2,3,4,5,6,5,6,6,6,21,23,21])
+        console.log(arr);
+        console.log(arr2);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
