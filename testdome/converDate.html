@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>exercises</h1>
+
+    <script>
+      function formatDate (userDate) {
+        let [m, d, y] = userDate.split('/');
+        
+        m = m.length == 1 ? '0'+m : m;
+        d = d.length == 1 ? '0'+d : d;
+        return y + m + d;
+      }
+
+      console.log(formatDate('10/31/2014'))
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>exercises</h1>
+
+    <script>
+      function createCheckDigit (membershipId) {
+        let i = 1;
+        //recieve a string
+        const sumAlldigits = numString =>
+          [...numString].reduce((ac, cv) => Number(ac) + Number(cv))
+
+        function recuCheckDigiy (membershipId) {
+          const sum = sumAlldigits(membershipId)
+          console.log(`iterate number ${i} res: ${sum}`);
+          if (sum.toString().length > 1) {
+            // iterate
+            i++;
+            return recuCheckDigiy(sum.toString());
+          }
+
+          return sum;
+        }
+
+        return recuCheckDigiy(membershipId);
+      }
+
+      console.log(createCheckDigit('85555'))
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        class Vec {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+
+            }
+            plus(vec) {
+                return [this.x + vec[0], this.y + vec[1]]
+            }
+            minus(vec) {
+                return [this.x - vec[0], this.y - vec[1]]
+            }
+
+            get length() {
+                return Math.abs(Math.sqrt((this.x * this.x) + (this.y * this.y) ))
+            }
+        }
+
+        const vector= new  Vec(3,2);
+
+        console.log(vector.length); 
+        // sum
+        console.log(vector.plus([1,3]));
+        // minus 
+        console.log(vector.minus([1,3])); 
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
