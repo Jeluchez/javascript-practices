@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function* counter(value) {
+            while (true) {
+                const step = yield value++;
+                debugger
+                if (step) {
+                    value += step;
+                    debugger
+                    // console.log('****+value******');
+                    console.log(`value: ${value}`);
+                }
+            }
+        }
+
+        const generatorFunc = counter(0);
+        console.log(generatorFunc.next().value); // 0
+        console.log(generatorFunc.next().value); // 1
+        console.log(generatorFunc.next().value); // 2
+        console.log(generatorFunc.next().value); // 3
+        console.log(generatorFunc.next(10).value); // 14
+        // console.log(generatorFunc.next().value); // 15
+        // console.log(generatorFunc.next(10).value); // 26
+
+
+    </script>
+</body>
+
+</html>
